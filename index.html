@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Физика — Вариант 7</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/my.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown data-menu-title="Титульный слайд">
+                <script type="text/template">
+                    # Физика
+
+                    
+
+                    
+
+
+                </script>
+            </section>
+
+            <section data-markdown data-menu-title="Определения" class="section-divider">
+                <script type="text/template">
+                    Определения
+                    -----------
+                </script>
+            </section>
+
+            <section data-markdown data-menu-title="Что такое физика" class="intro-slide">
+                <script type="text/template">
+                    ### Что такое физика
+
+                    Физика — это наука о наиболее общих законах природы,
+                    движении материи, энергии, взаимодействии тел и явлений окружающего мира.
+                </script>
+            </section>
+
+            <section data-markdown data-menu-title="Что такое градус Цельсия" class="intro-slide">
+                <script type="text/template">
+                    ### Что такое градус Цельсия
+
+                    Градус Цельсия — это единица измерения температуры.
+                    По этой шкале `0 °C` соответствует температуре таяния льда,
+                    а `100 °C` — температуре кипения воды при нормальном атмосферном давлении.
+                </script>
+            </section>
+
+            <section class="section-divider" data-menu-title="Раздел: Единицы измерения">
+                <div class="divider-content">
+                    <p class="section-chip">Раздел 1</p>
+                    <h2>Единицы измерения</h2>
+                    <p>Скорость, температура, длина, масса, площадь, объем и давление</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Раздел: Скорость" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.1</p>
+                    <h2>Скорость</h2>
+                    <p>Как записываются единицы скорости и где они используются</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы скорости" class="compact-slide">
+                <h3>Единицы скорости</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Метр в секунду</td>
+                            <td>м/с</td>
+                            <td>Основная единица СИ в физике и задачах на движение</td>
+                        </tr>
+                        <tr>
+                            <td>Километр в час</td>
+                            <td>км/ч</td>
+                            <td>Скорость автомобиля и наземного транспорта</td>
+                        </tr>
+                        <tr>
+                            <td>Миля в час</td>
+                            <td>mph</td>
+                            <td>Дорожные измерения в США и Великобритании</td>
+                        </tr>
+                        <tr>
+                            <td>Узел</td>
+                            <td>kn</td>
+                            <td>Морской и воздушный транспорт</td>
+                        </tr>
+                        <tr>
+                            <td>Мах</td>
+                            <td>M</td>
+                            <td>Сравнение скорости объекта со скоростью звука</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Конвертер скорости" class="program-slide">
+                <h3>Конвертер скорости</h3>
+                <div class="tool-card program-card" data-category="speed">
+                    <p class="program-inline">
+                        Значение
+                        <input id="speed-value" data-role="value" type="text" placeholder="72.5">
+                        из
+                        <select id="speed-from" data-role="from">
+                            <option value="mps">м/с</option>
+                            <option value="kmh">км/ч</option>
+                            <option value="mph">mph</option>
+                            <option value="knot">kn</option>
+                            <option value="mach">M</option>
+                        </select>
+                        в
+                        <select id="speed-to" data-role="to">
+                            <option value="kmh">км/ч</option>
+                            <option value="mps">м/с</option>
+                            <option value="mph">mph</option>
+                            <option value="knot">kn</option>
+                            <option value="mach">M</option>
+                        </select>
+                        <button data-role="convert" type="button">OK</button>
+                    </p>
+                    <output data-role="output">Введите число, выберите исходную и целевую единицу.</output>
+                </div>
+            </section>
+
+            <section data-menu-title="Раздел: Температура" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.2</p>
+                    <h2>Температура</h2>
+                    <p>Температурные шкалы в быту, метеорологии и научных расчетах</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы температуры" class="compact-slide">
+                <h3>Единицы температуры</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Градус Цельсия</td>
+                            <td>°C</td>
+                            <td>Погода, бытовые приборы, школьные лаборатории</td>
+                        </tr>
+                        <tr>
+                            <td>Кельвин</td>
+                            <td>K</td>
+                            <td>Термодинамика и научные формулы</td>
+                        </tr>
+                        <tr>
+                            <td>Градус Фаренгейта</td>
+                            <td>°F</td>
+                            <td>Погода и техника в США</td>
+                        </tr>
+                        <tr>
+                            <td>Градус Ранкина</td>
+                            <td>°R</td>
+                            <td>Инженерные расчеты в англоязычных системах</td>
+                        </tr>
+                        <tr>
+                            <td>Градус Реомюра</td>
+                            <td>°Re</td>
+                            <td>Исторические измерения и учебные примеры</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Конвертер температуры" class="program-slide">
+                <h3>Конвертер температуры</h3>
+                <div class="tool-card program-card" data-category="temperature">
+                    <p class="program-inline">
+                        Значение
+                        <input id="temperature-value" data-role="value" type="text" placeholder="36.6">
+                        из
+                        <select id="temperature-from" data-role="from">
+                            <option value="c">°C</option>
+                            <option value="k">K</option>
+                            <option value="f">°F</option>
+                            <option value="ra">°R</option>
+                            <option value="re">°Re</option>
+                        </select>
+                        в
+                        <select id="temperature-to" data-role="to">
+                            <option value="k">K</option>
+                            <option value="c">°C</option>
+                            <option value="f">°F</option>
+                            <option value="ra">°R</option>
+                            <option value="re">°Re</option>
+                        </select>
+                        <button data-role="convert" type="button">OK</button>
+                    </p>
+                    <output data-role="output">Для температуры используются не только коэффициенты, но и сдвиги шкал.</output>
+                </div>
+            </section>
+
+            <section data-menu-title="Раздел: Длина" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.3</p>
+                    <h2>Длина</h2>
+                    <p>От миллиметров в деталях до километров на картах и трассах</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы длины" class="compact-slide">
+                <h3>Единицы длины</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Миллиметр</td>
+                            <td>мм</td>
+                            <td>Толщина материалов, размеры деталей</td>
+                        </tr>
+                        <tr>
+                            <td>Сантиметр</td>
+                            <td>см</td>
+                            <td>Бытовые измерения и школьные задачи</td>
+                        </tr>
+                        <tr>
+                            <td>Метр</td>
+                            <td>м</td>
+                            <td>Основная единица СИ для длины</td>
+                        </tr>
+                        <tr>
+                            <td>Километр</td>
+                            <td>км</td>
+                            <td>Расстояния между объектами и населенными пунктами</td>
+                        </tr>
+                        <tr>
+                            <td>Дюйм</td>
+                            <td>in</td>
+                            <td>Экранная диагональ, резьбы, зарубежная техника</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Конвертер длины" class="program-slide">
+                <h3>Конвертер длины</h3>
+                <div class="tool-card program-card" data-category="length">
+                    <p class="program-inline">
+                        Значение
+                        <input id="length-value" data-role="value" type="text" placeholder="2.54">
+                        из
+                        <select id="length-from" data-role="from">
+                            <option value="mm">мм</option>
+                            <option value="cm">см</option>
+                            <option value="m">м</option>
+                            <option value="km">км</option>
+                            <option value="inch">in</option>
+                        </select>
+                        в
+                        <select id="length-to" data-role="to">
+                            <option value="cm">см</option>
+                            <option value="mm">мм</option>
+                            <option value="m">м</option>
+                            <option value="km">км</option>
+                            <option value="inch">in</option>
+                        </select>
+                        <button data-role="convert" type="button">OK</button>
+                    </p>
+                    <output data-role="output">Для длины удобно использовать метр как промежуточную единицу.</output>
+                </div>
+            </section>
+
+            <section data-menu-title="Раздел: Масса" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.4</p>
+                    <h2>Масса</h2>
+                    <p>Единицы массы нужны в механике, торговле, логистике и химии</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы массы" class="compact-slide">
+                <h3>Единицы массы</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Грамм</td>
+                            <td>г</td>
+                            <td>Продукты, аптечные и химические измерения</td>
+                        </tr>
+                        <tr>
+                            <td>Килограмм</td>
+                            <td>кг</td>
+                            <td>Основная бытовая и учебная единица</td>
+                        </tr>
+                        <tr>
+                            <td>Тонна</td>
+                            <td>т</td>
+                            <td>Грузы, транспорт, промышленность</td>
+                        </tr>
+                        <tr>
+                            <td>Фунт</td>
+                            <td>lb</td>
+                            <td>Англоязычные страны, спорт, маркировка товаров</td>
+                        </tr>
+                        <tr>
+                            <td>Унция</td>
+                            <td>oz</td>
+                            <td>Небольшие массы, упаковка, ювелирное дело</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Конвертер массы" class="program-slide">
+                <h3>Конвертер массы</h3>
+                <div class="tool-card program-card" data-category="mass">
+                    <p class="program-inline">
+                        Значение
+                        <input id="mass-value" data-role="value" type="text" placeholder="5">
+                        из
+                        <select id="mass-from" data-role="from">
+                            <option value="g">г</option>
+                            <option value="kg">кг</option>
+                            <option value="ton">т</option>
+                            <option value="lb">lb</option>
+                            <option value="oz">oz</option>
+                        </select>
+                        в
+                        <select id="mass-to" data-role="to">
+                            <option value="kg">кг</option>
+                            <option value="g">г</option>
+                            <option value="ton">т</option>
+                            <option value="lb">lb</option>
+                            <option value="oz">oz</option>
+                        </select>
+                        <button data-role="convert" type="button">OK</button>
+                    </p>
+                    <output data-role="output">Конвертер работает через промежуточную единицу килограмм.</output>
+                </div>
+            </section>
+
+            <section data-menu-title="Раздел: Площадь" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.5</p>
+                    <h2>Площадь</h2>
+                    <p>Площадь показывает размер поверхности и используется в строительстве и геометрии</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы площади" class="compact-slide">
+                <h3>Единицы площади</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Квадратный миллиметр</td>
+                            <td>мм²</td>
+                            <td>Малые сечения и точные чертежи</td>
+                        </tr>
+                        <tr>
+                            <td>Квадратный сантиметр</td>
+                            <td>см²</td>
+                            <td>Учебные задачи и мелкие поверхности</td>
+                        </tr>
+                        <tr>
+                            <td>Квадратный метр</td>
+                            <td>м²</td>
+                            <td>Комнаты, участки пола, стены</td>
+                        </tr>
+                        <tr>
+                            <td>Гектар</td>
+                            <td>га</td>
+                            <td>Поля, сельское хозяйство, земельные участки</td>
+                        </tr>
+                        <tr>
+                            <td>Квадратный километр</td>
+                            <td>км²</td>
+                            <td>Карты, территории городов и стран</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Раздел: Объем" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.6</p>
+                    <h2>Объем</h2>
+                    <p>Объем описывает вместимость тел, сосудов и емкостей</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы объема" class="compact-slide">
+                <h3>Единицы объема</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Миллилитр</td>
+                            <td>мл</td>
+                            <td>Лекарства, бытовые жидкости, лаборатории</td>
+                        </tr>
+                        <tr>
+                            <td>Литр</td>
+                            <td>л</td>
+                            <td>Напитки, топливо, емкости</td>
+                        </tr>
+                        <tr>
+                            <td>Кубический сантиметр</td>
+                            <td>см³</td>
+                            <td>Геометрия, моторостроение, медицина</td>
+                        </tr>
+                        <tr>
+                            <td>Кубический метр</td>
+                            <td>м³</td>
+                            <td>Строительство, вентиляция, большие резервуары</td>
+                        </tr>
+                        <tr>
+                            <td>Баррель</td>
+                            <td>bbl</td>
+                            <td>Нефтяная промышленность и международная торговля</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Раздел: Давление" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">1.7</p>
+                    <h2>Давление</h2>
+                    <p>Давление связывает силу с площадью и используется в газах, жидкостях и технике</p>
+                </div>
+            </section>
+
+            <section data-menu-title="Единицы давления" class="compact-slide">
+                <h3>Единицы давления</h3>
+                <table class="units-table">
+                    <thead>
+                        <tr>
+                            <th>Единица</th>
+                            <th>Как выводится</th>
+                            <th>Где применяется</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Паскаль</td>
+                            <td>Па</td>
+                            <td>Основная единица СИ для давления</td>
+                        </tr>
+                        <tr>
+                            <td>Килопаскаль</td>
+                            <td>кПа</td>
+                            <td>Погода, насосы, компрессоры</td>
+                        </tr>
+                        <tr>
+                            <td>Бар</td>
+                            <td>bar</td>
+                            <td>Шины, гидравлика, промышленное оборудование</td>
+                        </tr>
+                        <tr>
+                            <td>Атмосфера</td>
+                            <td>atm</td>
+                            <td>Физические расчеты и газовые законы</td>
+                        </tr>
+                        <tr>
+                            <td>Миллиметр ртутного столба</td>
+                            <td>мм рт. ст.</td>
+                            <td>Медицина и барометрические измерения</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section data-menu-title="Раздел: Задачи на движение" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">Раздел 2</p>
+                    <h2>Задачи на скорость, время и расстояние</h2>
+                    <p>Классические формулы движения и программное решение</p>
+                </div>
+            </section>
+
+            <section data-markdown data-menu-title="Формулы и примеры" class="compact-slide">
+                <script type="text/template">
+                    ### Основные соотношения
+
+                    - расстояние = скорость × время
+                    - скорость = расстояние / время
+                    - время = расстояние / скорость
+
+                    ### Примеры
+
+                    - Автомобиль едет `90 км/ч` в течение `2 ч`, значит проходит `180 км`.
+                    - Пешеход прошел `6 км` за `1.5 ч`, значит его скорость `4 км/ч`.
+                    - Поезд прошел `240 км` со скоростью `80 км/ч`, значит время в пути `3 ч`.
+                </script>
+            </section>
+
+            <section data-menu-title="Решатель задачи" class="program-slide">
+                <h3>Решатель задачи на движение</h3>
+                <div class="tool-card program-card solver-card">
+                    <p class="program-inline">
+                        v=
+                        <input id="motion-speed" type="text" placeholder="км/ч">
+                        t=
+                        <input id="motion-time" type="text" placeholder="ч">
+                        s=
+                        <input id="motion-distance" type="text" placeholder="км">
+                    </p>
+                    <div class="solver-actions">
+                        <button id="motion-solve" type="button">OK</button>
+                        <button id="motion-clear" type="button" class="secondary-button">Сброс</button>
+                    </div>
+                    <output id="motion-output">Программа вычислит третью величину по двум известным.</output>
+                </div>
+            </section>
+
+            <section data-menu-title="Раздел: Исходный код" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">Раздел 3</p>
+                    <h2>Исходный код программ</h2>
+                    <p>Фрагменты JavaScript из файла приложения</p>
+                </div>
+            </section>
+
+            <section data-markdown data-menu-title="Код конвертера" class="compact-slide code-slide">
+                <script type="text/template">
+                    ### Фрагмент конвертера
+
+                    ```js
+                    function convertByFactor(value, fromKey, toKey, units) {
+                        const baseValue = value * units[fromKey].toBase;
+                        return roundValue(baseValue / units[toKey].toBase);
+                    }
+                    
+                    function convertTemperature(value, fromKey, toKey, units) {
+                        const celsius = units[fromKey].toBase(value);
+                        return roundValue(units[toKey].fromBase(celsius));
+                    }
+                    ```
+
+                    
+                </script>
+            </section>
+
+            <section data-markdown data-menu-title="Код решателя" class="compact-slide code-slide">
+                <script type="text/template">
+                    ### Фрагмент решателя задачи
+
+                    ```js
+                    const filledCount = Object.values(filled).filter(Boolean).length;
+
+                    if (filledCount !== 2) {
+                        motionOutput.textContent = "Нужно заполнить ровно два поля из трех.";
+                        return;
+                    }
+
+                    if (filled.speed && filled.time) {
+                        values.distance = roundValue(values.speed * values.time);
+                        distanceInput.value = values.distance;
+                        motionOutput.textContent = "Расстояние = " + values.distance + " км";
+                        return;
+                    }
+
+                    if (filled.distance && filled.time) {
+                        if (values.time === 0) {
+                            motionOutput.textContent = "Время не должно быть равно нулю.";
+                            return;
+                        }
+                        values.speed = roundValue(values.distance / values.time);
+                        speedInput.value = values.speed;
+                        motionOutput.textContent = "Скорость = " + values.speed + " км/ч";
+                    }
+                    ```
+
+                        
+                </script>
+            </section>
+
+            <section data-menu-title="Раздел: Иллюстрации" class="section-divider">
+                <div class="divider-content">
+                    <p class="section-chip">Раздел 4</p>
+                    <h2>Иллюстрации по теме</h2>
+                    <p>Визуальные ассоциации с измерениями, расчетами и точностью</p>
+                </div>
+            </section>
+
+            <section data-background-image="image/1.jpg" data-background-size="cover" data-menu-title="Иллюстрация 1">
+            </section>
+
+            <section data-background-image="image/2.jpg" data-background-size="cover" data-menu-title="Иллюстрация 2">
+            </section>
+
+            <section data-background-image="image/3.jpg" data-background-size="cover" data-menu-title="Иллюстрация 3">
+            </section>
+
+            <section data-background-image="image/4.jpg" data-background-size="cover" data-menu-title="Иллюстрация 4">
+            </section>
+
+            <section data-background-image="image/5.jpg" data-background-size="cover" data-menu-title="Иллюстрация 5">
+            </section>
+
+            <section data-markdown data-menu-title="Заключение" class="outro-slide">
+                <script type="text/template">
+                    ## Спасибо за внимание
+
+                    
+                </script>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            controls: true,
+            slideNumber: true,
+            center: false,
+            transition: 'slide',
+            menu: {
+                numbers: true,
+                markers: true,
+                titleSelector: 'h1, h2, h3',
+                hideMissingTitles: false,
+                themes: false,
+                transitions: false,
+                openButton: true,
+                keyboard: true
+            },
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        if (window.hljs) {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }
+                },
+                { src: 'plugin/menu/menu.js', async: true }
+            ]
+        });
+    </script>
+</body>
+</html>
